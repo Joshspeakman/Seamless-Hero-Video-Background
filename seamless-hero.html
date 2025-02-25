@@ -1,0 +1,199 @@
+<!-- Seamless Hero Video Background Component -->
+<header class="hero-video-header" style="width: 100%; height: 66.67vh; min-height: 66.67vh; font-family: Arial, sans-serif; position: relative; overflow: hidden; background-color: black;">
+  <div id="video-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; overflow: hidden; opacity: 0; transition: opacity 2s ease;">
+    <!-- YouTube video iframe - To change the video, replace the video ID in the src URL -->
+    <iframe 
+      src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&mute=1&controls=0&loop=1&playlist=YOUR_VIDEO_ID&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen
+      style="position: absolute; top: 50%; left: 50%; width: 100vw; height: 56.25vw; transform: translate(-50%, -50%); object-fit: cover; pointer-events: none;"
+    ></iframe>
+
+    <!-- Transparent overlay - Adjust background-color to change overlay opacity -->
+    <div id="transparent-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.3);"></div>
+  </div>
+  <div id="black-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: black; transition: opacity 2s ease;"></div>
+  <div class="content-container" style="width: 100%; max-width: 90vw; margin: 0 auto; padding: 0 2vw; height: 100%; position: relative; z-index: 2;">
+    <div id="cta-container" style="position: absolute; bottom: 5vh; right: 5vw;">
+      <!-- Call to action button - Change href to update button link -->
+      <a href="/your-link-here/" id="cta-button" class="cta-button">
+        <!-- Button icon - Change class to use a different Font Awesome icon -->
+        <i class="fas fa-shopping-cart cta-icon"></i>CALL TO ACTION
+      </a>
+    </div>
+  </div>
+</header>
+
+<style>
+  /* Call to action button styles */
+  .cta-button {
+    font-size: 15px;
+    font-family: sans-serif;
+    padding: 10px 25px 10px 15px;
+    border-radius: 5px;
+    border: 2px solid #FFFFFF;
+    transition: all 0.3s ease;
+    width: 136px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    color: #FFFFFF;
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
+  
+  /* Call to action button hover effect */
+  .cta-button:hover {
+    background-color: rgba(51, 51, 51, 0.39);
+    border-color: transparent;
+    color: #FFFFFF !important;
+  }
+
+  /* Call to action icon styles */
+  .cta-icon {
+    margin-right: 10px;
+  }
+
+  /* Call to action container positioning */
+  #cta-container {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Large screen styles */
+  @media (min-width: 2560px) {
+    .cta-button {
+      font-size: 18px;
+      padding: 12px 24px;
+      border-width: 3px;
+      width: 160px;
+    }
+    #cta-container {
+      bottom: 60px;
+      right: 60px;
+    }
+  }
+
+  /* Desktop and smaller screens */
+  @media (max-width: 1440px) {
+    .cta-button {
+      font-size: 14px;
+      padding: 9px 18px;
+      width: 120px;
+    }
+    #cta-container {
+      bottom: 35px;
+      right: 35px;
+    }
+  }
+
+  /* Smaller desktop and tablet styles */
+  @media (max-width: 1024px) {
+    .hero-video-header {
+      height: 400px !important;
+      min-height: 400px !important;
+    }
+    #video-container, #black-overlay {
+      height: 400px !important;
+    }
+    #video-container iframe {
+      width: 100vw !important;
+      height: 56.25vw !important;
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) !important;
+      object-fit: cover !important;
+    }
+    #cta-container {
+      bottom: 30px;
+      right: 30px;
+    }
+    .cta-button {
+      font-size: 13px;
+      padding: 8px 16px;
+      width: 110px;
+    }
+  }
+
+  /* Tablet-specific styles */
+  @media (max-width: 768px) {
+    .hero-video-header {
+      height: 300px !important;
+      min-height: 300px !important;
+    }
+    #video-container, #black-overlay {
+      height: 300px !important;
+    }
+    #video-container iframe {
+      width: 100vw !important;
+      height: 56.25vw !important;
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) !important;
+      object-fit: cover !important;
+    }
+    .cta-button {
+      font-size: 12px;
+      padding: 7px 25px 7px 15px;
+      width: 100px;
+      border-width: 1.5px;
+    }
+    #cta-container {
+      bottom: 25px;
+      right: 25px;
+    }
+  }
+
+  /* Mobile-specific styles */
+  @media (max-width: 900px) {
+    .hero-video-header {
+      height: 200px !important;
+      min-height: 200px !important;
+    }
+    #video-container, #black-overlay {
+      height: 200px !important;
+    }
+    #video-container iframe {
+      width: 100% !important;
+      height: 300px !important;
+      top: -60px !important;
+      left: 0 !important;
+      transform: none !important;
+      object-fit: cover !important;
+    }
+    .cta-button {
+      font-size: 11px;
+      padding: 6px 19px;
+      width: 90px;
+      border-width: 1px;
+    }
+    #cta-container {
+      bottom: 20px;
+      right: 20px;
+    }
+    /* Uncomment to hide the CTA button on mobile devices
+    #cta-container {
+      display: none;
+    } */
+  }
+</style>
+
+<!-- Add Font Awesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<script>
+  // Fade in the video and fade out the black overlay
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      document.getElementById('video-container').style.opacity = '1';
+      document.getElementById('black-overlay').style.opacity = '0';
+    }, 100); // Small delay to ensure everything is loaded
+  });
+</script>
