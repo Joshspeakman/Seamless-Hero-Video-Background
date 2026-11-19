@@ -128,3 +128,9 @@ MIT License
 
 - YouTube's terms of service require some form of attribution. While this component hides the standard YouTube controls for a cleaner design, please ensure you comply with YouTube's terms of service.
 - Some mobile browsers have restrictions on autoplay videos. The component includes fallbacks for mobile viewing.
+
+## Support
+
+If you get some use out of this, you can buy me a coffee on Ko-fi.
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/speakerjosh)
